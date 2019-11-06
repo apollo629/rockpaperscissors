@@ -4,22 +4,22 @@ import com.byinal.rockpaperscissors.domain.model.rule.Move;
 
 public class PlayRequest {
 
-    private Move firstPlayerMove;
-    private Move secondPlayerMove;
+    private Integer playerNo;
+    private Move move;
 
-    public Move getFirstPlayerMove() {
-        return firstPlayerMove;
+    public Integer getPlayerNo() {
+        return playerNo;
     }
 
-    public void setFirstPlayerMove(Move firstPlayerMove) {
-        this.firstPlayerMove = firstPlayerMove;
+    public void setPlayerNo(Integer playerNo) {
+        this.playerNo = playerNo;
     }
 
-    public Move getSecondPlayerMove() {
-        return secondPlayerMove;
+    public Move getMove() {
+        return move;
     }
 
-    public void setSecondPlayerMove(Move secondPlayerMove) {
-        this.secondPlayerMove = secondPlayerMove;
+    public void setMove(Move move) {
+        this.move = move;
     }
 }

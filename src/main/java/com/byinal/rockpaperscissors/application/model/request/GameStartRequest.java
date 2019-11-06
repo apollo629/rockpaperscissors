@@ -1,6 +1,6 @@
 package com.byinal.rockpaperscissors.application.model.request;
 
-import com.byinal.rockpaperscissors.domain.model.GameType;
+import com.byinal.rockpaperscissors.domain.model.game.GameType;
 
 public class GameStartRequest {
 

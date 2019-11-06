@@ -2,6 +2,7 @@ package com.byinal.rockpaperscissors.infrastructure.rest;
 
 import com.byinal.rockpaperscissors.application.model.request.GameStartRequest;
 import com.byinal.rockpaperscissors.application.model.request.PlayRequest;
+import com.byinal.rockpaperscissors.application.model.response.GamePlayResponse;
 import com.byinal.rockpaperscissors.application.model.response.GameResponse;
 import com.byinal.rockpaperscissors.application.service.game.GameService;
 import org.springframework.http.HttpStatus;
@@ -31,8 +32,8 @@ public class GameController {
     }
 
     @PostMapping("games/{gameId}/play")
-    public void play(@PathVariable String gameId, @RequestBody PlayRequest playRequest){
-
+    public GamePlayResponse play(@PathVariable String gameId, @RequestBody PlayRequest playRequest){
+        return gameService.play(gameId, playRequest);
     }
 
 }

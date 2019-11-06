@@ -1,6 +1,6 @@
 package com.byinal.rockpaperscissors.domain.repository;
 
-import com.byinal.rockpaperscissors.domain.model.Game;
+import com.byinal.rockpaperscissors.domain.model.game.Game;
 
 public interface GameRepository {
 

@@ -5,7 +5,7 @@ public class GameResponse {
     private String id;
     private Integer winningScore;
     private String gameType;
-    private String status = "IN_PROGRESS";
+    private String status;
 
     public String getId() {
         return id;

@@ -2,6 +2,7 @@ package com.byinal.rockpaperscissors.application.service.game;
 
 import com.byinal.rockpaperscissors.application.model.request.GameStartRequest;
 import com.byinal.rockpaperscissors.application.model.request.PlayRequest;
+import com.byinal.rockpaperscissors.application.model.response.GamePlayResponse;
 import com.byinal.rockpaperscissors.application.model.response.GameResponse;
 
 public interface GameService {
@@ -10,5 +11,5 @@ public interface GameService {
 
     GameResponse retrieveGame(String id);
 
-    void play(String gameId, PlayRequest playRequest);
+    GamePlayResponse play(String gameId, PlayRequest playRequest);
 }

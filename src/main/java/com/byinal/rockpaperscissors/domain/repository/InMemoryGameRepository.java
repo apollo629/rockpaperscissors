@@ -1,7 +1,7 @@
 package com.byinal.rockpaperscissors.domain.repository;
 
 import com.byinal.rockpaperscissors.domain.exception.GameNotFoundException;
-import com.byinal.rockpaperscissors.domain.model.Game;
+import com.byinal.rockpaperscissors.domain.model.game.Game;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
