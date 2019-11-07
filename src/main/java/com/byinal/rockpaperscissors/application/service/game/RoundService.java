@@ -18,16 +18,14 @@ public class RoundService {
 
     public void evaluate(Player p1, Player p2) {
         Optional<Move> optionalWinnerMove = defaultRuleEngine.decide(p1.move(), p2.move());
-        if (optionalWinnerMove.isPresent()) {
-            Move winnerMove = optionalWinnerMove.get();
-            if (p1.getMove().equals(winnerMove)) {
-                p1.setScore(p1.getScore() + 1);
-            } else if (p2.getMove().equals(winnerMove)) {
-                p2.setScore(p2.getScore() + 1);
-            } else {
-                //return tie round
-            }
-        }
+        optionalWinnerMove.ifPresent(winnerMove -> updatePlayerScores(p1, p2, winnerMove));
     }
 
+    private void updatePlayerScores(Player firstPlayer, Player secondPlayer, Move winnerMove) {
+        if (firstPlayer.getMove().equals(winnerMove)) {
+            firstPlayer.incrementScore();
+        } else {
+            secondPlayer.incrementScore();
+        }
+    }
 }

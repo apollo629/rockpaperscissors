@@ -3,7 +3,7 @@ package com.byinal.rockpaperscissors.application.model.response;
 import com.byinal.rockpaperscissors.domain.model.game.GameStatus;
 import com.byinal.rockpaperscissors.domain.model.player.Player;
 
-public class GamePlayResponse {
+public class GamePlayResponse extends Response{
 
     private String gameId;
     private GameStatus gameStatus;

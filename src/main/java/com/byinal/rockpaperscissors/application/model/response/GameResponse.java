@@ -1,6 +1,6 @@
 package com.byinal.rockpaperscissors.application.model.response;
 
-public class GameResponse {
+public class GameResponse extends Response {
 
     private String id;
     private Integer winningScore;

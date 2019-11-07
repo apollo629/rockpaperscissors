@@ -35,5 +35,4 @@ public class GameController {
     public GamePlayResponse play(@PathVariable String gameId, @RequestBody PlayRequest playRequest){
         return gameService.play(gameId, playRequest);
     }
-
 }

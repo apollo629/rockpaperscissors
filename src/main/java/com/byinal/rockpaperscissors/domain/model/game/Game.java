@@ -1,39 +1,54 @@
 package com.byinal.rockpaperscissors.domain.model.game;
 
-import com.byinal.rockpaperscissors.domain.model.player.ComputerPlayer;
-import com.byinal.rockpaperscissors.domain.model.player.PersonPlayer;
 import com.byinal.rockpaperscissors.domain.model.player.Player;
 import com.byinal.rockpaperscissors.domain.model.rule.Move;
 
-public class Game {
+public abstract class Game {
 
+    private String id;
     private Integer winningScore;
     private GameType gameType;
-    private Player firstPlayer;
-    private Player secondPlayer;
+    Player firstPlayer;
+    Player secondPlayer;
     private GameStatus gameStatus = GameStatus.IN_PROGRESS;
 
-    private Game(Integer winningScore, GameType gameType, Player firstPlayer, Player secondPlayer) {
+    public Game(Integer winningScore, GameType gameType, Player firstPlayer, Player secondPlayer) {
         this.winningScore = winningScore;
         this.gameType = gameType;
         this.firstPlayer = firstPlayer;
         this.secondPlayer = secondPlayer;
     }
 
-    public void setWinningScore(Integer winningScore) {
-        this.winningScore = winningScore;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Integer getWinningScore() {
         return winningScore;
     }
 
-    public void setGameType(GameType gameType) {
-        this.gameType = gameType;
+    public void setWinningScore(Integer winningScore) {
+        this.winningScore = winningScore;
     }
 
     public GameType getGameType() {
         return gameType;
+    }
+
+    public void setGameType(GameType gameType) {
+        this.gameType = gameType;
+    }
+
+    public GameStatus getGameStatus() {
+        return gameStatus;
+    }
+
+    public void setGameStatus(GameStatus gameStatus) {
+        this.gameStatus = gameStatus;
     }
 
     public Player getFirstPlayer() {
@@ -52,46 +67,5 @@ public class Game {
         this.secondPlayer = secondPlayer;
     }
 
-
-    public GameStatus getGameStatus() {
-        return gameStatus;
-    }
-
-    public void setGameStatus(GameStatus gameStatus) {
-        this.gameStatus = gameStatus;
-    }
-
-    public void setPlayerMove(Move move) {
-        firstPlayer.setMove(move);
-    }
-
-
-    public static class GameBuilder {
-
-        private Integer winningScore;
-        private GameType gameType;
-        private Player firstPlayer;
-        private Player secondPlayer;
-
-        public GameBuilder winningScore(Integer winningScore) {
-            this.winningScore = winningScore;
-            return this;
-        }
-
-        public GameBuilder gameType(GameType gameType) {
-            this.gameType = gameType;
-            return this;
-        }
-
-        public Game build() {
-            if (this.gameType.isGameVersusComputer()) {
-                this.firstPlayer = new PersonPlayer();
-                this.secondPlayer = new ComputerPlayer();
-            } else {
-                this.firstPlayer = new PersonPlayer();
-                this.secondPlayer = new PersonPlayer();
-            }
-            return new Game(this.winningScore, this.gameType, this.firstPlayer, this.secondPlayer);
-        }
-    }
+    public abstract void setPlayerMove(Move move);
 }

@@ -16,14 +16,15 @@ public class InMemoryGameRepository implements GameRepository {
 
     @Override
     public String save(Game game) {
-        String nextId = UUID.randomUUID().toString();
-        gameMap.put(nextId, game);
-        return nextId;
+        String id = UUID.randomUUID().toString();
+        game.setId(id);
+        gameMap.put(id, game);
+        return id;
     }
 
     @Override
     public Game findById(String gameId) {
         return Optional.ofNullable(gameMap.get(gameId))
-                .orElseThrow(GameNotFoundException::new);
+                .orElseThrow(() -> new GameNotFoundException("Game can not be found with id: " + gameId));
     }
 }

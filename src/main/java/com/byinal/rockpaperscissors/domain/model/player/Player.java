@@ -22,4 +22,8 @@ public abstract class Player {
     public void setScore(Integer score) {
         this.score = score;
     }
+
+    public void incrementScore(){
+        this.score += 1;
+    }
 }
