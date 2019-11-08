@@ -4,14 +4,13 @@ import com.byinal.rockpaperscissors.domain.exception.GameAlreadyFinishedExceptio
 import com.byinal.rockpaperscissors.domain.model.game.Game;
 import com.byinal.rockpaperscissors.domain.model.game.GameStatus;
 import com.byinal.rockpaperscissors.domain.model.game.GameVersusComputer;
+import com.byinal.rockpaperscissors.domain.model.player.ComputerPlayer;
 import com.byinal.rockpaperscissors.domain.model.player.PersonPlayer;
 import com.byinal.rockpaperscissors.domain.model.player.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.eq;
 
 class GameStatusServiceTest {
 
@@ -20,7 +19,7 @@ class GameStatusServiceTest {
     @Test
     void should_not_throw_exception_when_game_is_not_finished() {
         //given
-        Game game = new GameVersusComputer(eq(3), any(Player.class), any(Player.class));
+        Game game = new GameVersusComputer(3, new PersonPlayer(), new ComputerPlayer());
         game.setGameStatus(GameStatus.IN_PROGRESS);
 
         //when
@@ -33,7 +32,7 @@ class GameStatusServiceTest {
     @Test
     void should_throw_exception_when_game_is_finished() {
         //given
-        Game finishedGame = new GameVersusComputer(eq(3), any(Player.class), any(Player.class));
+        Game finishedGame = new GameVersusComputer(3, new PersonPlayer(), new ComputerPlayer());
         finishedGame.setGameStatus(GameStatus.FINISHED);
 
         //when
