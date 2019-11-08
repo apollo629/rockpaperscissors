@@ -33,10 +33,11 @@ Maven will install all the dependencies and followed by run the application
         }
         Response: 
         {
-            "id": "0788f885-7a2e-4f82-9785-a68b57dbd186",
-            "status": "IN_PROGRESS",
+            "id": "8f2cfd4f-a033-4f61-afa7-8c7fc3b3224c",
             "winningScore": 3,
             "gameType": "COMPUTER",
+            "gameStatus": "IN_PROGRESS",
+            "status": null,
             "errorMessage": null
         }
   
@@ -45,10 +46,11 @@ Maven will install all the dependencies and followed by run the application
     GET http://localhost:8080/api/v1/games/{id}  
         Response: 
         {
-            "id": "0788f885-7a2e-4f82-9785-a68b57dbd186",
-            "status": "IN_PROGRESS",
+            "id": "8f2cfd4f-a033-4f61-afa7-8c7fc3b3224c",
             "winningScore": 3,
             "gameType": "COMPUTER",
+            "gameStatus": "IN_PROGRESS",
+            "status": null,
             "errorMessage": null
         }
 
@@ -60,7 +62,7 @@ Maven will install all the dependencies and followed by run the application
             }
         Response: 
             {
-                "gameId": "0788f885-7a2e-4f82-9785-a68b57dbd186",
+                "gameId": "8f2cfd4f-a033-4f61-afa7-8c7fc3b3224c",
                 "gameStatus": "IN_PROGRESS",
                 "player1": {
                     "move": "ROCK",

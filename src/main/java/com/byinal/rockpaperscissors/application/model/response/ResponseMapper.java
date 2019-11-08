@@ -11,7 +11,7 @@ public class ResponseMapper {
         gameResponse.setId(game.getId());
         gameResponse.setWinningScore(game.getWinningScore());
         gameResponse.setGameType(game.getGameType().name());
-        gameResponse.setStatus(game.getGameStatus().name());
+        gameResponse.setGameStatus(game.getGameStatus().name());
         return gameResponse;
     }
 

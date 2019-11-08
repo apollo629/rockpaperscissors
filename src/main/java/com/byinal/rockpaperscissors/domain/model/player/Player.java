@@ -4,6 +4,7 @@ import com.byinal.rockpaperscissors.domain.model.rule.Move;
 
 public abstract class Player {
 
+    PlayerType type;
     private Move move;
     private Integer score = 0;
 
@@ -21,6 +22,14 @@ public abstract class Player {
 
     public void setScore(Integer score) {
         this.score = score;
+    }
+
+    public PlayerType getType() {
+        return type;
+    }
+
+    public void setType(PlayerType type) {
+        this.type = type;
     }
 
     public void incrementScore(){

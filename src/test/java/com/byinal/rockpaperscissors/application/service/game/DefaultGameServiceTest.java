@@ -4,6 +4,7 @@ import com.byinal.rockpaperscissors.application.model.request.GameStartRequest;
 import com.byinal.rockpaperscissors.application.model.response.GameResponse;
 import com.byinal.rockpaperscissors.application.model.response.ResponseMapper;
 import com.byinal.rockpaperscissors.domain.model.game.GameFactory;
+import com.byinal.rockpaperscissors.domain.model.game.GameStatus;
 import com.byinal.rockpaperscissors.domain.model.game.GameType;
 import com.byinal.rockpaperscissors.domain.model.game.GameVersusComputer;
 import com.byinal.rockpaperscissors.domain.model.player.ComputerPlayer;
@@ -67,6 +68,30 @@ class DefaultGameServiceTest {
         InOrder inOrder = inOrder(gameFactory, inMemoryGameRepository, responseMapper);
         inOrder.verify(gameFactory).createGame(gameStartRequest.getWinningScore(), gameStartRequest.getGameType());
         inOrder.verify(inMemoryGameRepository).save(gameVersusComputer);
+        inOrder.verify(responseMapper).mapToGameResponse(gameVersusComputer);
+        inOrder.verifyNoMoreInteractions();
+    }
+
+    @Test
+    void should_retrieve_game_succesfully() {
+        //given
+        int winningScore = 3;
+        GameStartRequest gameStartRequest = new GameStartRequest();
+        gameStartRequest.setWinningScore(winningScore);
+        gameStartRequest.setGameType(GameType.COMPUTER);
+
+        GameVersusComputer gameVersusComputer = new GameVersusComputer(winningScore, new PersonPlayer(), new ComputerPlayer());
+        gameVersusComputer.setId("uuid");
+
+        when(inMemoryGameRepository.findById("uuid")).thenReturn(gameVersusComputer);
+        when(responseMapper.mapToGameResponse(gameVersusComputer)).thenReturn(new GameResponse());
+
+        //when
+        defaultGameService.retrieveGame("uuid");
+
+        //then
+        InOrder inOrder = inOrder(inMemoryGameRepository, responseMapper);
+        inOrder.verify(inMemoryGameRepository).findById("uuid");
         inOrder.verify(responseMapper).mapToGameResponse(gameVersusComputer);
         inOrder.verifyNoMoreInteractions();
     }

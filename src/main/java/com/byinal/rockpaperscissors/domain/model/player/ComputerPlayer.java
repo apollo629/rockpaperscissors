@@ -6,6 +6,10 @@ import java.util.Random;
 
 public class ComputerPlayer extends Player {
 
+    public ComputerPlayer() {
+        this.type = PlayerType.COMPUTER;
+    }
+
     @Override
     public Move move() {
         Move move = Move.values()[new Random().nextInt(3)];

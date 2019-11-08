@@ -5,7 +5,7 @@ public class GameResponse extends Response {
     private String id;
     private Integer winningScore;
     private String gameType;
-    private String status;
+    private String gameStatus;
 
     public String getId() {
         return id;
@@ -31,12 +31,12 @@ public class GameResponse extends Response {
         this.gameType = gameType;
     }
 
-    public String getStatus() {
-        return status;
+    public String getGameStatus() {
+        return gameStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setGameStatus(String gameStatus) {
+        this.gameStatus = gameStatus;
     }
 }
 
