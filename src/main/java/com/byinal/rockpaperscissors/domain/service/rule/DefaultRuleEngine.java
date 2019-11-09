@@ -1,6 +1,6 @@
 package com.byinal.rockpaperscissors.domain.service.rule;
 
-import com.byinal.rockpaperscissors.domain.model.rule.Move;
+import com.byinal.rockpaperscissors.domain.model.Move;
 import javafx.util.Pair;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.byinal.rockpaperscissors.domain.model.rule.Move.*;
+import static com.byinal.rockpaperscissors.domain.model.Move.*;
 
 @Component
 public class DefaultRuleEngine implements RuleEngine {

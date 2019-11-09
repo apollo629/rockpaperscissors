@@ -19,9 +19,18 @@ public class GameStatusService {
         Player firstPlayer = game.getFirstPlayer();
         Player secondPlayer = game.getSecondPlayer();
         Integer winningScore = game.getWinningScore();
-        if (firstPlayer.getScore().equals(winningScore) || secondPlayer.getScore().equals(winningScore)) {
+        if (oneOfThePlayersWon(firstPlayer, secondPlayer, winningScore)) {
             game.setGameStatus(GameStatus.FINISHED);
+            if (firstPlayer.getScore().equals(winningScore)) {
+                game.setWinner(firstPlayer);
+            } else if (secondPlayer.getScore().equals(winningScore)) {
+                game.setWinner(secondPlayer);
+            }
         }
         return game;
+    }
+
+    private boolean oneOfThePlayersWon(Player firstPlayer, Player secondPlayer, Integer winningScore) {
+        return firstPlayer.getScore().equals(winningScore) || secondPlayer.getScore().equals(winningScore);
     }
 }

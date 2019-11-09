@@ -1,16 +1,18 @@
 package com.byinal.rockpaperscissors.domain.model.game;
 
 import com.byinal.rockpaperscissors.domain.model.player.Player;
-import com.byinal.rockpaperscissors.domain.model.rule.Move;
+import com.byinal.rockpaperscissors.domain.model.round.Round;
 
 public abstract class Game {
 
     private String id;
     private Integer winningScore;
     private GameType gameType;
+    private GameStatus gameStatus = GameStatus.IN_PROGRESS;
     Player firstPlayer;
     Player secondPlayer;
-    private GameStatus gameStatus = GameStatus.IN_PROGRESS;
+    private Round round;
+    private Player winner;
 
     public Game(Integer winningScore, GameType gameType, Player firstPlayer, Player secondPlayer) {
         this.winningScore = winningScore;
@@ -67,5 +69,19 @@ public abstract class Game {
         this.secondPlayer = secondPlayer;
     }
 
-    public abstract void setPlayerMove(Move move);
+    public Round getRound() {
+        return round;
+    }
+
+    public void setRound(Round round) {
+        this.round = round;
+    }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
 }

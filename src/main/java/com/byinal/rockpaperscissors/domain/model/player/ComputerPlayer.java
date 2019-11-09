@@ -1,6 +1,6 @@
 package com.byinal.rockpaperscissors.domain.model.player;
 
-import com.byinal.rockpaperscissors.domain.model.rule.Move;
+import com.byinal.rockpaperscissors.domain.model.Move;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package com.byinal.rockpaperscissors.domain.model.rule;
+package com.byinal.rockpaperscissors.domain.model;
 
 public enum Move {
 

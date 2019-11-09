@@ -5,7 +5,7 @@ import com.byinal.rockpaperscissors.application.model.request.PlayRequest;
 import com.byinal.rockpaperscissors.application.model.response.GamePlayResponse;
 import com.byinal.rockpaperscissors.application.model.response.GameResponse;
 
-public interface GameService {
+public interface GameManager {
 
     GameResponse startGame(GameStartRequest gameStartRequest);
 

@@ -1,6 +1,6 @@
 package com.byinal.rockpaperscissors.domain.model.converter;
 
-import com.byinal.rockpaperscissors.domain.model.rule.Move;
+import com.byinal.rockpaperscissors.domain.model.Move;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
