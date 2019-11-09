@@ -1,16 +1,16 @@
 package com.byinal.rockpaperscissors.application.model.response;
 
+import com.byinal.rockpaperscissors.application.model.dto.PlayerDto;
 import com.byinal.rockpaperscissors.application.model.dto.RoundDto;
 import com.byinal.rockpaperscissors.application.model.dto.WinnerDto;
 import com.byinal.rockpaperscissors.domain.model.game.GameStatus;
-import com.byinal.rockpaperscissors.domain.model.player.Player;
 
 public class GamePlayResponse extends Response {
 
     private String gameId;
     private RoundDto roundDto;
-    private Player player1;
-    private Player player2;
+    private PlayerDto player1;
+    private PlayerDto player2;
     private GameStatus gameStatus;
     private WinnerDto winnerOfTheGame;
 
@@ -38,19 +38,19 @@ public class GamePlayResponse extends Response {
         this.gameStatus = gameStatus;
     }
 
-    public Player getPlayer1() {
+    public PlayerDto getPlayer1() {
         return player1;
     }
 
-    public void setPlayer1(Player player1) {
+    public void setPlayer1(PlayerDto player1) {
         this.player1 = player1;
     }
 
-    public Player getPlayer2() {
+    public PlayerDto getPlayer2() {
         return player2;
     }
 
-    public void setPlayer2(Player player2) {
+    public void setPlayer2(PlayerDto player2) {
         this.player2 = player2;
     }
 

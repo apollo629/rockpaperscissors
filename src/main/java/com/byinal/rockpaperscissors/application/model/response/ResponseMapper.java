@@ -1,5 +1,6 @@
 package com.byinal.rockpaperscissors.application.model.response;
 
+import com.byinal.rockpaperscissors.application.converter.PlayerDtoConverter;
 import com.byinal.rockpaperscissors.application.converter.RoundDtoConverter;
 import com.byinal.rockpaperscissors.application.converter.WinnerDtoConverter;
 import com.byinal.rockpaperscissors.application.model.dto.RoundDto;
@@ -12,10 +13,14 @@ public class ResponseMapper {
 
     private final RoundDtoConverter roundDtoConverter;
     private final WinnerDtoConverter winnerDtoConverter;
+    private final PlayerDtoConverter playerDtoConverter;
 
-    public ResponseMapper(RoundDtoConverter roundDtoConverter, WinnerDtoConverter winnerDtoConverter) {
+    public ResponseMapper(RoundDtoConverter roundDtoConverter,
+                          WinnerDtoConverter winnerDtoConverter,
+                          PlayerDtoConverter playerDtoConverter) {
         this.roundDtoConverter = roundDtoConverter;
         this.winnerDtoConverter = winnerDtoConverter;
+        this.playerDtoConverter = playerDtoConverter;
     }
 
     public GameResponse mapToGameResponse(Game game) {
@@ -34,8 +39,8 @@ public class ResponseMapper {
         RoundDto roundDto = roundDtoConverter.convert(game.getRound());
         gamePlayResponse.setRoundDto(roundDto);
         gamePlayResponse.setGameStatus(game.getGameStatus());
-        gamePlayResponse.setPlayer1(game.getFirstPlayer());
-        gamePlayResponse.setPlayer2(game.getSecondPlayer());
+        gamePlayResponse.setPlayer1(playerDtoConverter.convert(game.getFirstPlayer()));
+        gamePlayResponse.setPlayer2(playerDtoConverter.convert(game.getSecondPlayer()));
         if (game.getGameStatus().isFinished()) {
             Player winner = game.getWinner();
             gamePlayResponse.setWinnerOfTheGame(winnerDtoConverter.convert(winner));

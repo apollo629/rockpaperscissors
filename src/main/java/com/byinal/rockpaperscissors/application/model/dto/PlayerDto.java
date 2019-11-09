@@ -1,10 +1,12 @@
 package com.byinal.rockpaperscissors.application.model.dto;
 
+import com.byinal.rockpaperscissors.domain.model.Move;
 import com.byinal.rockpaperscissors.domain.model.player.PlayerType;
 
-public class WinnerDto {
+public class PlayerDto {
 
     private PlayerType type;
+    private Move lastMove;
     private Integer score;
 
     public PlayerType getType() {
@@ -21,5 +23,13 @@ public class WinnerDto {
 
     public void setScore(Integer score) {
         this.score = score;
+    }
+
+    public Move getLastMove() {
+        return lastMove;
+    }
+
+    public void setLastMove(Move lastMove) {
+        this.lastMove = lastMove;
     }
 }

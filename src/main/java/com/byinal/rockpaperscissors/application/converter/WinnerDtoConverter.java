@@ -9,7 +9,7 @@ public class WinnerDtoConverter {
 
     public WinnerDto convert(Player winner) {
         WinnerDto winnerDto = new WinnerDto();
-        winnerDto.setPlayerType(winner.getType());
+        winnerDto.setType(winner.getType());
         winnerDto.setScore(winner.getScore());
         return winnerDto;
     }

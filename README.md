@@ -73,18 +73,18 @@ Maven will install all the dependencies and followed by run the application
                 "roundDto": {
                     "roundResult": "BREAK",
                     "roundWinner": {
-                        "playerType": "PERSON",
+                        "type": "PERSON",
                         "score": 1
                     }
                 },
                 "player1": {
                     "type": "PERSON",
-                    "move": "ROCK",
+                    "lastMove": "ROCK",
                     "score": 1
                 },
                 "player2": {
                     "type": "COMPUTER",
-                    "move": "SCISSORS",
+                    "lastMove": "SCISSORS",
                     "score": 0
                 },
                 "gameStatus": "IN_PROGRESS",
@@ -100,7 +100,7 @@ Maven will install all the dependencies and followed by run the application
                 "roundDto": {
                     "roundResult": "BREAK",
                     "roundWinner": {
-                        "playerType": "PERSON",
+                        "type": "PERSON",
                         "score": 3
                     }
                 },
@@ -116,7 +116,7 @@ Maven will install all the dependencies and followed by run the application
                 },
                 "gameStatus": "FINISHED",
                 "winnerOfTheGame": {
-                    "playerType": "PERSON",
+                    "type": "PERSON",
                     "score": 3
                 }
             } 
