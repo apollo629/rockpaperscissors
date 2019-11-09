@@ -71,7 +71,7 @@ Maven will install all the dependencies and followed by run the application
                 "errorMessage": null,
                 "gameId": "493e74e4-8edd-4e50-97f6-5c739a86d86b",
                 "roundDto": {
-                    "roundResult": "BREAK",
+                    "roundResult": "BREAK",  //DRAW or BREAK
                     "roundWinner": {
                         "type": "PERSON",
                         "score": 1

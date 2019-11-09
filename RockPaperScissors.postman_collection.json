@@ -1,0 +1,68 @@
+{
+	"variables": [],
+	"info": {
+		"name": "RockPaperScissors",
+		"_postman_id": "06c82e43-02e3-ffea-3543-90b52ec0f2de",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Game",
+			"request": {
+				"url": "localhost:8080/api/v1/games",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"winningScore\": 3,\n\t\"gameType\": \"COMPUTER\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Game By Id",
+			"request": {
+				"url": "localhost:8080/api/v1/games/{{gameId}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Play Move",
+			"request": {
+				"url": "localhost:8080/api/v1/games/{{gameId}}/play",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"move\": \"ROCK\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
