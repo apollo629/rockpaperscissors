@@ -5,7 +5,6 @@ import com.byinal.rockpaperscissors.application.model.response.GamePlayResponse;
 import com.byinal.rockpaperscissors.application.model.response.GameResponse;
 import com.byinal.rockpaperscissors.application.model.response.Response;
 import com.byinal.rockpaperscissors.application.model.response.ResponseStatus;
-import com.byinal.rockpaperscissors.application.service.game.GameManager;
 import com.byinal.rockpaperscissors.domain.model.game.GameType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,9 +19,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class GameControllerIT {
-
-    @Autowired
-    private GameManager gameManager;
 
     @Autowired
     TestRestTemplate testRestTemplate;
